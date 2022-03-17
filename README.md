@@ -20,6 +20,7 @@ samples, guidance on mobile development, and a full API reference.
 `lib/main.dart`(A simple app for Flutter)
 
 ```dart
+// Basically, the program is assembled by utilizing the libraries from dart_tools.
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
