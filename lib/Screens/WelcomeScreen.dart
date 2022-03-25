@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:turorial/Widgets/RoundedButton.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Column(
                       children: [
@@ -27,15 +29,32 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         Text(
                           'See what is happening in the world right now.',
                           style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.bold),
+                              fontSize: 40, fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
                     Column(
                       children: [
-                        RoundedButton(btnText: 'LOG IN', onBtnPressed: () {})
+                        RoundedButton(
+                            btnText: 'LOG IN',
+                            onBtnPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginScreen()));
+                            }),
+                        SizedBox(height: 30),
+                        RoundedButton(
+                            btnText: 'Create account',
+                            onBtnPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          RegistrationScreen()));
+                            }),
                       ],
-                    ),
+                    )
                   ],
                 ))));
   }
